@@ -8,7 +8,12 @@ class Greeter {
     }
 
     greet(name: string): string {
-        return `Hello ${this.capitalizeFirstChar(this.trim(name))}`;
+        let date: Date = new Date();
+        let greeting: string = "Hello";
+        if (date.getUTCHours() >= 6 && date.getUTCHours() <= 12) {
+            greeting = "Good morning";
+        }
+        return `${greeting} ${this.capitalizeFirstChar(this.trim(name))}`;
     }
 }
 
