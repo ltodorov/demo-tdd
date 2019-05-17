@@ -1,9 +1,16 @@
 import greeter from "./Greeter";
 
-describe("Greeter", () => {
+describe("greet()", () => {
+    let res: string;
+
     it("should have `greet()` that accepts a name and returns `Hello ${name}`", () => {
         let name: string = "World";
-        let res: string = greeter.greet(name);
+        res = greeter.greet(name);
         expect(res).toBe(`Hello ${name}`);
+    });
+
+    it("should trim the provided input", () => {
+        res = greeter.greet(" World ");
+        expect(res).toBe("Hello World");
     });
 });

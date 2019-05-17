@@ -1,6 +1,7 @@
 class Greeter {
     greet(name: string): string {
-        return `Hello ${name}`;
+        let trimmedName: string = name.trim();
+        return `Hello ${trimmedName}`;
     }
 }
 
