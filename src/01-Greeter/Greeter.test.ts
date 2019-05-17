@@ -13,4 +13,9 @@ describe("greet()", () => {
         res = greeter.greet(" World ");
         expect(res).toBe("Hello World");
     });
+
+    it("should capitalize the first letter of the name", () => {
+        res = greeter.greet("world");
+        expect(res).toBe("Hello World");
+    });
 });

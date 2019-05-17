@@ -1,7 +1,14 @@
 class Greeter {
+    private trim(str: string): string {
+        return str.trim();
+    }
+
+    private capitalizeFirstChar(str: string): string {
+        return str.charAt(0).toLocaleUpperCase() + str.slice(1);
+    }
+
     greet(name: string): string {
-        let trimmedName: string = name.trim();
-        return `Hello ${trimmedName}`;
+        return `Hello ${this.capitalizeFirstChar(this.trim(name))}`;
     }
 }
 
