@@ -1,0 +1,30 @@
+{
+  "name": "demo-tdd",
+  "version": "1.0.0",
+  "description": "Playing with TDD",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "rimraf dist",
+    "start": "tsc",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ltodorov/demo-tdd.git"
+  },
+  "author": "Lyubomir Todorov",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/ltodorov/demo-tdd/issues"
+  },
+  "homepage": "https://github.com/ltodorov/demo-tdd#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.13",
+    "jest": "^24.8.0",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.4.5"
+  }
+}
