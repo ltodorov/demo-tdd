@@ -9,4 +9,9 @@ describe("StringCalculator.add()", () => {
         expect(StringCalculator.add("1")).toBe(1);
         expect(StringCalculator.add("2")).toBe(2);
     });
+
+    it("should return the sum of two numbers, comma delimited", () => {
+        expect(StringCalculator.add("1,2")).toBe(3);
+        expect(StringCalculator.add("10,20")).toBe(30);
+    });
 });
