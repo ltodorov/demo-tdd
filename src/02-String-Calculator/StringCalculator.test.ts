@@ -14,4 +14,8 @@ describe("StringCalculator.add()", () => {
         expect(StringCalculator.add("1,2")).toBe(3);
         expect(StringCalculator.add("10,20")).toBe(30);
     });
+
+    it("should return the sum of two numbers, newline delimited", () => {
+        expect(StringCalculator.add("1\n2")).toBe(3);
+    });
 });
