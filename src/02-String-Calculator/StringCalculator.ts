@@ -6,8 +6,10 @@ class StringCalculator {
             sum = 0;
         } else {
             sum = this.sum(
-                this.checkNegatives(
-                    this.splitAndParse(str)
+                this.filterGreaterNumbers(
+                    this.checkNegatives(
+                        this.splitAndParse(str)
+                    ), 1000
                 )
             );
         }
@@ -26,6 +28,10 @@ class StringCalculator {
             throw new Error(`negatives not allowed: ${negatives.join(",")}`);
         }
         return numbers;
+    }
+
+    private filterGreaterNumbers(numbers: number[], limit: number) {
+        return numbers.filter((val: number) => val <= limit);
     }
 
     private sum(numbers: number[]): number {
