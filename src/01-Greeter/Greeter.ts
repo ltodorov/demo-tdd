@@ -12,6 +12,8 @@ class Greeter {
         let greeting: string = "Hello";
         if (date.getUTCHours() >= 6 && date.getUTCHours() <= 12) {
             greeting = "Good morning";
+        } else if (date.getUTCHours() >= 18 && date.getUTCHours() < 22) {
+            greeting = "Good evening";
         }
         return `${greeting} ${this.capitalizeFirstChar(this.trim(name))}`;
     }

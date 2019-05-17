@@ -27,21 +27,37 @@ describe("greet()", () => {
         expect(res).toBe("Hello Lyubo");
     });
 
-    it("should return `Good morning ${name}` if the time is 6:00", () => {
-        mockDate.set(new Date("2019-05-17T06:00:00.000Z"));
-        res = greeter.greet("Lyubo");
-        expect(res).toBe("Good morning Lyubo");
+    describe("greet() returns Good morning", () => {
+        it("should return `Good morning ${name}` if the time is 6:00", () => {
+            mockDate.set(new Date("2019-05-17T06:00:00.000Z"));
+            res = greeter.greet("Lyubo");
+            expect(res).toBe("Good morning Lyubo");
+        });
+
+        it("should return `Good morning ${name}` if the time is 10:00", () => {
+            mockDate.set(new Date("2019-05-17T10:00:00.000Z"));
+            res = greeter.greet("Lyubo");
+            expect(res).toBe("Good morning Lyubo");
+        });
+
+        it("should return `Good morning ${name}` if the time is 12:00", () => {
+            mockDate.set(new Date("2019-05-17T12:00:00.000Z"));
+            res = greeter.greet("Lyubo");
+            expect(res).toBe("Good morning Lyubo");
+        });
     });
 
-    it("should return `Good morning ${name}` if the time is 10:00", () => {
-        mockDate.set(new Date("2019-05-17T10:00:00.000Z"));
-        res = greeter.greet("Lyubo");
-        expect(res).toBe("Good morning Lyubo");
-    });
+    describe("greet() returns Good evening", () => {
+        it("should return `Good evening ${name}` if the time is 18:00", () => {
+            mockDate.set(new Date("2019-05-17T18:00:00.000Z"));
+            res = greeter.greet("Lyubo");
+            expect(res).toBe("Good evening Lyubo");
+        });
 
-    it("should return `Good morning ${name}` if the time is 12:00", () => {
-        mockDate.set(new Date("2019-05-17T12:00:00.000Z"));
-        res = greeter.greet("Lyubo");
-        expect(res).toBe("Good morning Lyubo");
+        it("should return `Good evening ${name}` if the time is 21:59", () => {
+            mockDate.set(new Date("2019-05-17T21:59:00.000Z"));
+            res = greeter.greet("Lyubo");
+            expect(res).toBe("Good evening Lyubo");
+        });
     });
 });
