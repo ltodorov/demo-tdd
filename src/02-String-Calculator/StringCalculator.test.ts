@@ -18,4 +18,8 @@ describe("StringCalculator.add()", () => {
     it("should return the sum of two numbers, newline delimited", () => {
         expect(StringCalculator.add("1\n2")).toBe(3);
     });
+
+    it("should return the sum of three numbers, delimited either way", () => {
+        expect(StringCalculator.add("1\n2,3\n4")).toBe(10);
+    });
 });
