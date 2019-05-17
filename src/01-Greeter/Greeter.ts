@@ -7,17 +7,28 @@ class Greeter {
         return str.charAt(0).toLocaleUpperCase() + str.slice(1);
     }
 
-    greet(name: string): string {
-        let date: Date = new Date();
-        let greeting: string = "Hello";
-        if (date.getUTCHours() >= 6 && date.getUTCHours() <= 12) {
+    private getGreeting(hours: number): string {
+        let greeting: string;
+
+        if (hours >= 6 && hours < 12) {
             greeting = "Good morning";
-        } else if (date.getUTCHours() >= 18 && date.getUTCHours() < 22) {
+        } else if (hours >= 12 && hours < 18) {
+            greeting = "Hello";
+        } else if (hours >= 18 && hours < 22) {
             greeting = "Good evening";
-        } else if (date.getUTCHours() >= 22 || date.getUTCHours() < 6) {
+        } else {
             greeting = "Good night";
         }
-        return `${greeting} ${this.capitalizeFirstChar(this.trim(name))}`;
+
+        return greeting;
+    }
+
+    greet(name: string): string {
+        let result: string;
+        let date: Date = new Date();
+        result = `${this.getGreeting(date.getHours())} ${this.capitalizeFirstChar(this.trim(name))}`;
+        console.log(result);
+        return result;
     }
 }
 
