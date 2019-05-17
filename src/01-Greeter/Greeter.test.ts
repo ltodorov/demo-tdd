@@ -60,4 +60,24 @@ describe("greet()", () => {
             expect(res).toBe("Good evening Lyubo");
         });
     });
+
+    describe("greet() returns Good night", () => {
+        it("should return `Good night ${name}` if the time is 22:00", () => {
+            mockDate.set(new Date("2019-05-17T22:00:00.000Z"));
+            res = greeter.greet("Lyubo");
+            expect(res).toBe("Good night Lyubo");
+        });
+
+        it("should return `Good night ${name}` if the time is 00:00", () => {
+            mockDate.set(new Date("2019-05-18T00:00:00.000Z"));
+            res = greeter.greet("Lyubo");
+            expect(res).toBe("Good night Lyubo");
+        });
+
+        it("should return `Good night ${name}` if the time is 05:59", () => {
+            mockDate.set(new Date("2019-05-18T05:59:00.000Z"));
+            res = greeter.greet("Lyubo");
+            expect(res).toBe("Good night Lyubo");
+        });
+    });
 });
