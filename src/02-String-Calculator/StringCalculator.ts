@@ -18,8 +18,8 @@ class StringCalculator {
     }
 
     private splitAndParse(str: string): number[] {
-        const delimiter = /,|\n/;
-        return str.split(delimiter).map(Number);
+        const { numStr, delimiter } = this.formatString(str);
+        return numStr.split(delimiter).map(Number);
     }
 
     private checkNegatives(numbers: number[]): number[] {
@@ -38,6 +38,23 @@ class StringCalculator {
         return numbers.reduce((acc: number, val: number) => {
             return acc += val;
         }, 0);
+    }
+
+    private formatString(str: string): {
+        numStr: string
+        delimiter: RegExp | string
+    } {
+        let numStr = str;
+        let delimiter: RegExp | string = /,|\n/;
+        let indexOfNewLine = str.indexOf("\n");
+        if (str.startsWith("//")) {
+            numStr = str.substring(indexOfNewLine);
+            delimiter = str.charAt(2);
+        }
+        return {
+            numStr,
+            delimiter
+        };
     }
 }
 

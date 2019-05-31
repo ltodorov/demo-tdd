@@ -33,5 +33,9 @@ describe("StringCalculator", () => {
         it("should ignore numbers greater than 1000", () => {
             expect(stringCalculator.add("1001,2000,3,2")).toBe(5);
         });
+
+        it("should use a single char delimiter defined on the first line starting with `//`", () => {
+            expect(stringCalculator.add("//#\n1#2")).toBe(3);
+        });
     });
 });

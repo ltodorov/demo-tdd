@@ -1,5 +1,8 @@
 # demo-tdd
+
 Playing with TDD
+
+https://github.com/wix/tdd-katas
 
 ## Kata no. 1 - Greeter
 
