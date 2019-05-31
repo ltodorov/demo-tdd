@@ -37,5 +37,9 @@ describe("StringCalculator", () => {
         it("should use a single char delimiter defined on the first line starting with `//`", () => {
             expect(stringCalculator.add("//#\n1#2")).toBe(3);
         });
+
+        it("should use a multi char delimiter defined on the first line starting with `//`", () => {
+            expect(stringCalculator.add("//###\n1###2")).toBe(3);
+        });
     });
 });

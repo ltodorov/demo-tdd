@@ -49,7 +49,7 @@ class StringCalculator {
         let indexOfNewLine = str.indexOf("\n");
         if (str.startsWith("//")) {
             numStr = str.substring(indexOfNewLine);
-            delimiter = str.charAt(2);
+            delimiter = str.substring(2, indexOfNewLine);
         }
         return {
             numStr,
