@@ -23,6 +23,10 @@ describe("PrimeFactors", () => {
         it("should return [2, 2] if we pass 4", () => {
             expect(primeFactors.generate(4)).toEqual([2, 2]);
         });
+
+        it("should return [2, 2, 2] if we pass 4", () => {
+            expect(primeFactors.generate(8)).toEqual([2, 2, 2]);
+        });
     });
 
 });
