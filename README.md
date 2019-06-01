@@ -31,19 +31,28 @@ Write a method `add` under an object `StringCalculator` that, given a delimited 
 
 ## Kata no. 3 - Prime Factors
 
-This kata demonstrates the [transformation priority premise](https://en.wikipedia.org/wiki/Transformation_Priority_Premise).
-
 Write a function `generate` under a module PrimeFactors that, given an integer, returns the list containing the prime factors in numerical sequence.
 
-1. 1 should return []
-2. 2 should return [2]
-3. 3 should return [3]
-4. 4 should return [2,2]
-5. 5 should return [5]
-6. 6 should return [2,3]
-7. 7 should return [7]
-8. 8 should return [2,2,2]
-9. 9 should return [3,3]
-10. 4620 should return [2,2,3,5,7,11]
+* 1 should return []
+* 2 should return [2]
+* 3 should return [3]
+* 4 should return [2,2]
+* 5 should return [5]
+* 6 should return [2,3]
+* 7 should return [7]
+* 8 should return [2,2,2]
+* 9 should return [3,3]
+* 4620 should return [2,2,3,5,7,11]
 
 ## Kata no. 4 - Bowling Game
+
+Write a `BowlingGame` object with methods `roll(pins)` and `getScore()`.
+
+This will be the game engine which follows the rules of bowling:
+
+1. The game consists of 10 frames, in each frame the player has the ability to knock down 10 pins.
+2. The score for the frame is the total number of pins knocked down + bonuses for `strikes` and `spares`.
+3. A `spare` is when the player knocks down all 10 pins in 2 tries. The bonus for a spare is the next roll.
+4. A `strike` is when the player knocks down all 10 pins in 1 try. The bonus is the next 2 rolls.
+5. In the tenth frame a player who rolls a spare / strike gets an extra roll(s) to complete the frame.
+6. No more than 3 rolls can be rolled in the 10th frame.
