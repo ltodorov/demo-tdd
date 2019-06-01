@@ -1,6 +1,6 @@
 class PrimeFactors {
     private static primeNumbers = [
-        2, 3, 5
+        2, 3, 5, 7, 11
     ];
 
     generate(num: number): number[] {
