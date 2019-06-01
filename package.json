@@ -6,9 +6,9 @@
   "scripts": {
     "prestart": "rimraf dist",
     "start": "tsc",
-    "test": "jest",
-    "test:watch": "jest --watchAll",
-    "test:coverage": "jest --coverage"
+    "test": "jest --verbose",
+    "test:watch": "jest --verbose --watchAll",
+    "test:coverage": "jest --verbose --coverage"
   },
   "repository": {
     "type": "git",
