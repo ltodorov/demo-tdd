@@ -12,21 +12,17 @@ describe("PrimeFactors", () => {
     });
 
     describe("PrimeFactors.generate()", () => {
-        it("should return [] if we pass 1", () => {
-            expect(primeFactors.generate(1)).toEqual([]);
-        });
+        const rules: Record<string, number[]> = {
+            "1": [],
+            "2": [2],
+            "4": [2, 2],
+            "8": [2, 2, 2]
+        };
 
-        it("should return [2] if we pass 2", () => {
-            expect(primeFactors.generate(2)).toEqual([2]);
-        });
-
-        it("should return [2, 2] if we pass 4", () => {
-            expect(primeFactors.generate(4)).toEqual([2, 2]);
-        });
-
-        it("should return [2, 2, 2] if we pass 4", () => {
-            expect(primeFactors.generate(8)).toEqual([2, 2, 2]);
+        Object.keys(rules).forEach(key => {
+            it(`should return [${rules[key]}] if we pass ${key}`, () => {
+                expect(primeFactors.generate(Number(key))).toEqual(rules[key]);
+            });
         });
     });
-
 });
