@@ -1,16 +1,15 @@
 class PrimeFactors {
-    private static primeNumbers = [
-        2, 3, 5, 7, 11
-    ];
+    generate(number: number): number[] {
+        const factors = [];
 
-    generate(num: number): number[] {
-        return PrimeFactors.primeNumbers.reduce((acc: number[], prime: number) => {
-            while (num % prime === 0) {
-                acc.push(prime);
-                num /= prime;
+        for (let divisor = 2; number > 1; divisor++) {
+            while (number % divisor === 0) {
+                factors.push(divisor);
+                number /= divisor;
             }
-            return acc;
-        }, []);
+        }
+
+        return factors;
     }
 }
 
