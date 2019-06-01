@@ -11,5 +11,7 @@ describe("PrimeFactors", () => {
         expect(primeFactors).toBeInstanceOf(PrimeFactors);
     });
 
-
+    it("should have generate() method than returns [] if we pass 1", () => {
+        expect(primeFactors.generate(1)).toEqual([]);
+    });
 });
