@@ -1,13 +1,16 @@
 class PrimeFactors {
+    private static primeNumbers = [
+        2, 3
+    ];
+
     generate(num: number): number[] {
-        let res: number[] = [];
-
-        while (num % 2 === 0) {
-            res.push(2);
-            num = num / 2;
-        }
-
-        return res;
+        return PrimeFactors.primeNumbers.reduce((acc: number[], prime: number) => {
+            while (num % prime === 0) {
+                acc.push(prime);
+                num /= prime;
+            }
+            return acc;
+        }, []);
     }
 }
 

@@ -16,7 +16,8 @@ describe("PrimeFactors", () => {
             "1": [],
             "2": [2],
             "4": [2, 2],
-            "8": [2, 2, 2]
+            "8": [2, 2, 2],
+            "3": [3]
         };
 
         Object.keys(rules).forEach(key => {
