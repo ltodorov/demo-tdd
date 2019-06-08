@@ -1,4 +1,14 @@
+export interface Logger {
+    log(print: string): void;
+}
+
 class Greeter {
+    logger: Logger;
+
+    constructor(logger: Logger) {
+        this.logger = logger;
+    }
+
     private trim(str: string): string {
         return str.trim();
     }
@@ -27,11 +37,9 @@ class Greeter {
         let result: string;
         let date: Date = new Date();
         result = `${this.getGreeting(date.getHours())} ${this.capitalizeFirstChar(this.trim(name))}`;
-        console.log(result);
+        this.logger.log(result);
         return result;
     }
 }
 
-const greeter = new Greeter();
-
-export default greeter;
+export default Greeter;

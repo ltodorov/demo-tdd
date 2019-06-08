@@ -1,4 +1,4 @@
-import greeter from "./Greeter";
+import Greeter, { Logger } from "./Greeter";
 import mockDate from "mockdate";
 
 type DayTimes = Record<string, string[]>;
@@ -24,9 +24,14 @@ function extractHoursAndMinutes(time: string): HoursAndMinutes {
 
 describe("greet()", () => {
     let res: string;
-
+    let greeter: Greeter;
+    let logger: Logger;
 
     beforeEach(() => {
+        logger = {
+            log: jest.fn()
+        };
+        greeter = new Greeter(logger);
         mockDate.set(new Date(2019, 4, 17, 14, 0));
     });
 
@@ -63,8 +68,7 @@ describe("greet()", () => {
     });
 
     it("should log into console when it is called", () => {
-        const spy = jest.spyOn(console, "log");
         greeter.greet("Jack");
-        expect(spy).toHaveBeenCalledTimes(1);
+        expect(logger.log).toHaveBeenCalledTimes(1);
     });
 });
