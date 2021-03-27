@@ -13,4 +13,6 @@ class PrimeFactors {
     }
 }
 
-export default PrimeFactors;
+export {
+    PrimeFactors
+};

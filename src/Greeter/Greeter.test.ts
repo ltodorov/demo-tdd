@@ -1,4 +1,4 @@
-import Greeter, { Logger } from "./Greeter";
+import { Greeter, Logger } from "./Greeter";
 import mockDate from "mockdate";
 
 type DayTimes = Record<string, string[]>;
@@ -16,13 +16,14 @@ interface HoursAndMinutes {
 
 function extractHoursAndMinutes(time: string): HoursAndMinutes {
     const [hours, minutes] = time.split(":");
+
     return {
         hours: Number(hours),
         minutes: Number(minutes)
     };
 }
 
-describe("greet()", () => {
+describe("Greeter", () => {
     let res: string;
     let greeter: Greeter;
     let logger: Logger;
