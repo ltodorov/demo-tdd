@@ -2,7 +2,7 @@
   "name": "demo-tdd",
   "version": "1.0.0",
   "description": "Playing with TDD",
-  "main": "index.js",
+  "private": "true",
   "scripts": {
     "prestart": "rimraf dist",
     "start": "tsc",
